@@ -1,0 +1,14 @@
+			/*****************
+			Theme Name: BAE
+			Theme URI: http://www.bae.com.au
+			Description: BAE Air show
+			Version: 1
+			Author: Guri Sandhu @ Made in Fairfax
+			Author URI: http://www.gurisandhu.com.au
+			*****************/
+
+
+/*
+To EDIT the style sheet please use theme.scss file in root directory. Also needs to run Gulp to compress the style sheet to 'theme.css' file.
+*/
+@import 'compressed/theme.css';

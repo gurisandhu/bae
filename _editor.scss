@@ -1,0 +1,447 @@
+// Mixins
+@mixin placeholder($color){
+	::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    	color:    $color;
+	}
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	   color:    $color;
+	   opacity:  1;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+	   color:    $color;
+	   opacity:  1;
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	   color:    $color;
+	}
+}
+@mixin transition($transition){
+	-webkit-transition: all $transition+s ease;
+	   -moz-transition: all $transition+s ease;
+	    -ms-transition: all $transition+s ease;
+	     -o-transition: all $transition+s ease;
+	        transition: all $transition+s ease;
+}
+
+@mixin background-color($color){
+	background-color: $color;
+	@include transition(.3);
+	&:hover{
+		text-decoration: none;
+		background-color: darken($color, 10%);
+		color: lighten($color, 70%);
+	}
+}
+@mixin background-color-light($color){
+	background-color: $color;
+	@include transition(.3);
+	&:hover{
+		text-decoration: none;
+		background-color: lighten($color, 10%);
+		color: lighten($color, 80%);
+	}
+}
+@mixin transform($amount){
+	-webkit-transform: rotate($amount+deg);
+	   -moz-transform: rotate($amount+deg);
+	    -ms-transform: rotate($amount+deg);
+	     -o-transform: rotate($amount+deg);
+	        transform: rotate($amount+deg);
+}
+@mixin responsive-padding-l-r($num){
+	padding-left: $num;
+	padding-right: $num;
+}
+
+@mixin body-smooth($color, $color2){
+	body{
+	-webkit-animation: smooth 2s;
+     -moz-animation: smooth 2s;
+       -o-animation: smooth 2s;
+          animation: smooth 2s;
+}
+@-webkit-keyframes smooth{
+	from {
+		opacity: 0;
+		-webkit-transition: all .3s ease;
+		   -moz-transition: all .3s ease;
+		    -ms-transition: all .3s ease;
+		     -o-transition: all .3s ease;
+		        transition: all .3s ease;
+		background-color: $color;
+	}
+	to {
+		opacity: 1;
+		background-color: $color2;
+		-webkit-transition: all 0s ease;
+		   -moz-transition: all 0s ease;
+		    -ms-transition: all 0s ease;
+		     -o-transition: all 0s ease;
+		        transition: all 0s ease;
+	}
+}
+@-moz-keyframes smooth{
+	from {
+		opacity: 0;
+		background-color: $color;
+	}
+	to {
+		opacity: 1;
+		background-color: $color2;
+	}
+}
+@-o-keyframes smooth{
+	from {
+		opacity: 0;
+		background-color: $color;
+	}
+	to {
+		opacity: 1;
+		background-color: $color2;
+	}
+}
+@keyframes smooth{
+	from {
+		opacity: 0;
+		background-color: $color;
+	}
+	to {
+		opacity: 1;
+		background-color: $color2;
+	}
+}
+
+}
+
+@mixin fixed-header-height($height){
+	&:before{
+		height: $height;
+	}
+	header{
+		height: $height;
+	}
+}
+/* Common */
+*{
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+  	-webkit-box-sizing: border-box;
+  	   -moz-box-sizing: border-box;
+  	        box-sizing: border-box;
+}
+img{
+	width:auto;
+	height:auto;
+	border:0;
+	max-width: 100%;
+}
+body{
+  margin: 0;
+  padding: 0;
+  &:after, &:before{
+  	clear: both;
+  	display: block;
+  	content: "";
+  }
+}
+header, section, footer, aside, nav{
+  float: left;
+  width: 100%;
+}
+.row{
+	width:100%;
+	float: left;
+	&:not(:first-of-type){
+		margin-top: 10px;
+	}
+}
+.full-width{
+	float: left;
+	width: 100%;
+}
+
+@mixin col-2($margin, $margin2){
+	float: left;
+	width: (100%-($margin))/2;
+	margin-right: $margin;
+	margin-bottom: $margin2;
+	&:first-child{
+		clear: left;
+	}
+	&:nth-of-type(2n+2){
+		margin-right: 0;
+	}
+	&:nth-of-type(2n+3){
+		clear: left;
+	}
+	&:nth-last-of-type(1), &:nth-last-of-type(2){
+		margin-bottom: 0;
+	}
+	&:nth-of-type(2){
+		> img{
+			float: right;
+		}
+	}
+}
+@mixin reset-col-2($margin, $margin2){
+	width: 100%;
+	float: none;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	&:nth-of-type(2n+2){
+		margin-right: $margin;
+	}
+	&:nth-of-type(2n+3), &:nth-of-type(3n+4){
+		float: none;
+		clear: none;
+	}
+	&:nth-of-type(3n+3){
+		margin-right: auto;
+	}
+	&:nth-last-of-type(1), &:nth-last-of-type(2){
+		margin-bottom: $margin2;
+	}
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+@mixin col-3($margin, $margin2){
+	float: left;
+	width: (100%-($margin*2))/3;
+	margin-right: $margin;
+	margin-bottom: $margin2;
+	&:first-child{
+		clear: left;
+	}
+	&:nth-of-type(3n+3){
+		margin-right: 0;
+	}
+	&:nth-of-type(3n+4){
+		clear: left;
+	}
+}
+@mixin reset-col-3($margin){
+	&:nth-of-type(3n+3){
+		margin-right: $margin;
+	}
+	&:nth-of-type(3n+4){
+		float: left;
+		clear: none;
+	}
+}
+
+@mixin col-4($margin, $margin2){
+	float: left;
+	width: (100%-($margin*3))/4;
+	margin-right: $margin;
+	margin-bottom: $margin2;
+	&:first-child{
+		clear: left;
+	}
+	&:nth-of-type(4n+4){
+		margin-right: 0;
+	}
+	&:nth-of-type(4n+5){
+		clear: left;
+	}
+}
+@mixin one-twoThird($one-third, $margin-right){
+	.one-third{
+		width: $one-third;
+		float: left;
+		margin-right: $margin-right;
+			& + .two-third{
+				width: 100% - $margin-right - $one-third;
+				float: left;
+			}
+	}
+}
+@mixin reset-one-twoThird($margin){
+	.one-third{
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: $margin;
+			& + .two-third{
+				width: 100%;
+			}
+	}
+}
+@mixin two-oneThird($one-third, $margin-right){
+	.two-third{
+		width: 100% - $margin-right - $one-third;
+		float: left;
+		margin-right: $margin-right;
+			& + .one-third{
+				width: $one-third;
+				float: left;
+			}
+	}
+}
+@mixin reset-two-oneThird($margin){
+	.two-third{
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: $margin;
+			& + .one-third{
+				width: 100%;
+			}
+	}
+}
+.responsive{
+	display: none;
+}
+
+p{
+	&:empty{
+		margin: 0;
+		padding: 0;
+	}
+	margin-top: 0;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+.table{
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.table-padding-t-b{
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+.table-cell{
+	display: table-cell;
+	vertical-align: middle;
+	float: none;
+    }
+.verticalAlign{
+	& > * {
+		position: relative;
+	}
+}    
+.width-70{
+	display: inline-block;
+	width: 70%;
+	margin: auto;
+	margin-bottom: 1%;
+}
+.swiper-button-next, .swiper-button-prev{
+	width: 50%;
+	height: 100%;
+	top: 0;
+	margin-top: 0;
+	bottom: 0;
+	@include transition(.5s);
+}
+.swiper-button-prev{
+	background-position: 1%;
+	left: 0;
+	&:hover{
+		background-position: 4%;
+	}
+}
+.swiper-button-next{
+	background-position: 99%;
+	right: 0;
+	&:hover{
+		background-position: 96%;
+	}
+}
+.container{
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 100%;
+	margin: auto;
+	min-width: 290px;
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+h1,h2,h3,h4,h5,h6{
+	display: block;
+	margin-top: 0;
+	margin-bottom: 15px;
+	line-height: 1.2;
+}
+.customize-support{
+	header.fixed{
+		top: 32px;	
+	}
+}
+
+.hide-body{
+	&.show{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.2);
+		z-index: 2;
+	}
+}
+.show-loader{
+	z-index: 2;
+	width: 80px;
+	height: 80px;
+	padding: 10px;
+	position: relative;
+	&:after{
+		content: "";
+		width: 60px;
+	    height: 60px;
+	    border: .5px dashed $blue;
+	    border-top: 2.5px solid $blue;
+		-webkit-border-radius: 50%;
+		        border-radius: 50%;
+		display: block;
+		color: white;
+		position: absolute;
+		top: 10px;
+		font-size: 55px;
+		left: 10px;
+		// z-index: 1;
+	-webkit-animation: fa-spin .6s infinite linear;
+	   -moz-animation: fa-spin .6s infinite linear;
+	     -o-animation: fa-spin .6s infinite linear;
+	        animation: fa-spin .6s infinite linear;
+	}
+}
+button, input[type="submit"]{
+	border: none;
+	font-size: inherit;
+	cursor: pointer;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+}
+a[href*="#"]{
+	// cursor: default!important;
+}
+select{
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	    float: left;
+	    width: 100%;
+	&::-ms-expand{
+		display: none;
+	}
+	option{
+		float: left;
+		width: 100%;
+	}
+}
+.clear-after{
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
