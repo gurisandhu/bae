@@ -11,4 +11,10 @@
 /*
 To EDIT the style sheet please use theme.scss file in root directory. Also needs to run Gulp to compress the style sheet to 'theme.css' file.
 */
+
+/*// //////////////
+//Font Face
+// //////////////*/
+@import 'fonts.css';
+
 @import 'compressed/theme.css';

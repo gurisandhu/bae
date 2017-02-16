@@ -15,20 +15,21 @@
 <header class="top">
 	<div class="container">
 		<div class="bae-logo">
+			<span>More from</span>
 			<a target="_blank" href=""><img src="compressed/images/bae-logo.png" alt="BAE logo"></a>
 		</div>
 	</div>
 </header>
-<header>
+<header class="main">
 	<div class="container">
 		<div class="desktop-header">
-			<div class="logo">
-				<a href=""><img src="compressed/images/logo.png" alt="FlightPath logo"></a>
-			</div>
+			<a href="" class="logo">
+				<img src="compressed/images/logo.png" alt="FlightPath logo">
+			</a>
 			<div class="desktop-menu">
 				<nav>
 					<ul>
-						<li><a href="">Government</a></li>
+						<li class="current-menu-item"><a href="">Government</a></li>
 						<li><a href="">Industry</a></li>
 						<li><a href="">Defence</a></li>
 						<li><a href="">Technology</a></li>
@@ -40,3 +41,5 @@
 		</div>
 	</div>
 </header>
+
+<?php include 'functions.php'; ?>

@@ -1,0 +1,19 @@
+@font-face {
+	font-family: 'BAEsystem';
+	src: url('fonts/BAESystems-Bold.eot');
+	src: local('☺'), url('fonts/BAESystems-Bold.woff') format('woff'), url('fonts/BAESystems-Bold.ttf') format('truetype'), url('fonts/BAESystems-Bold.svg') format('svg');
+	font-weight: bold;
+}
+@font-face {
+	font-family: 'BAEsystem';
+	src: url('fonts/BAESystems-Regular.eot');
+	src: local('☺'), url('fonts/BAESystems-Regular.woff') format('woff'), url('fonts/BAESystems-Regular.ttf') format('truetype'), url('fonts/BAESystems-Regular.svg') format('svg');
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'BAEsystem';
+	src: url('fonts/BAESystems-Light.eot');
+	src: local('☺'), url('fonts/BAESystems-Light.woff') format('woff'), url('fonts/BAESystems-Light.ttf') format('truetype'), url('fonts/BAESystems-Light.svg') format('svg');
+	font-weight: lighter;
+}
+

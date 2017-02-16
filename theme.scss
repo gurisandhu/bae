@@ -8,9 +8,286 @@
 // //////////////
 @import 'styleguide';
 
+.orange{
+	color: $theme;
+}
 
+// //////////////
+// Header
+header{
+	&.top{
+		background-color: $grey;
+		color: white;	
+	}
+}
+.bae-logo{
+	float: right;
+	padding: 11px 0;
+	a, img{
+		float: right;
+		display: inline-block;
+	}
+	span{
+		text-transform: uppercase;
+		font-family: $tahoma;
+		font-size: 10px;
+		font-weight: 600;
+		position: relative;
+		top: 0;
+		right: 8px;
+	}
+}
+header{
+	&.main{
+		border-bottom: 3px solid $theme;
+	}
+}
+.logo{
+	float: left;
+	background-color: black;
+	padding: 18px 36px;
+	width: auto;
+	position: relative;
+	&:before{
+		content: "";
+		position: absolute;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		display: block;
+	}
+}
+.desktop-menu{
+	float: right;
+	width: auto;
+	nav{
+		ul{
+			float: right;
+			list-style: none;
+			padding-left: 0;
+			margin: 0;
+		}
+		li{
+			float: left;
+			margin-right: 25px;
+			&:last-child{
+				margin-right: 0;
+			}
+			&.current-menu-item{
+				a{
+					&:after{
+						background-color: $theme;
+					}
+				}
+			}
+		}
+		a{
+			text-transform: uppercase;
+			color: black;
+			font-weight: bolder;
+			display: inline-block;
+			text-decoration: none;
+			padding: 32px 0;
+			position: relative;
+			&:after{
+				content: "";
+				position: absolute;
+				bottom: 20px;
+				height: 4px;
+				-webkit-border-radius: 5px;
+				        border-radius: 5px;
+				background-color: transparent;
+				left: 0;
+				width: 100%;
+				@include transition(.3);
+			}
+			&:hover{
+				&:after{
+					background-color: $theme;
+				}
+			}
+		}
+	}
+}
+.banner{
+	height: 720px;
+	.container{
+		height: 100%;
+	}
+	.banner-wrapper{
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		     -o-background-size: cover;
+		        background-size: cover;
+		    background-position: center;
+		    height: 100%;
+		    position: relative;
+	}
+}
+.banner-content{
+	background-color: white;
+	display: block;
+	text-decoration: none;
+	color: black;
+	width: 540px;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	padding: 43px 32px;
+	&:hover{
+		text-decoration: none;
+	}
+	p{
+		font-size: 23px;
+		height: 110px;
+		overflow: hidden;
+	}
+}
+.news{
+	padding: 80px 0;
+	.col-4{
+		@include col-4(2%,2%);
+		height: 270px;	
+		text-decoration: none;
+		&:hover{
+			text-decoration: none;
+		}
+		h2{
+			font-size: 23px;
+			color: $grey;
+		}
+	}
+}
+.news-image{
+	height: 158px;
+	width: 100%;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	     -o-background-size: cover;
+	        background-size: cover;
+	background-position: center;
+}
+.news-date{
+	margin: 12px 0;
+	font-size: 14px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+.subscription{
+	background-color: $greylight;
+	padding: 40px 0;
+}
+.subscription-form{
+	max-width: 700px;
+	margin-top: 40px;
+	text-align: center;
+	input[type="text"]{
+		text-align: center;
+		font-size: 14px;
+		letter-spacing: 2px;
+		color: black;
+		border: 1px solid black;
+		padding: 17px 10px;
+		font-family: $tahoma;
+	}
+	input[type="submit"], button{
+		font-family: $tahoma;
+		background-color: $theme;
+		color: white;
+		text-transform: uppercase;
+		max-width: 300px;
+		letter-spacing: 2px;
+		font-size: 14px;
+		padding: 7px 10px;
+		margin-top: 30px;
+		@include transition(.3);
+		&:hover{
+			background-color: darken($theme, 10%);
+		}
+	}
+}
 
-
+footer{
+	background-color: black;
+	color: white;
+	padding: 80px 0;
+	h6{
+		font-size: 20px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-transform: uppercase;
+	}
+	p{
+		font-size: 13px;
+		line-height: 1.6;
+		margin-bottom: 30px;
+	}
+	.col-4{
+		padding-right: 60px;
+		padding-top: 40px;
+		position: relative;
+		li{
+			float: left;
+			width: 100%;
+			margin-bottom: 8px;
+			a{
+				color: white;
+				text-transform: uppercase;
+				font-family: $tahoma;
+				font-size: 13px;
+			}
+		}
+	}
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	position: relative;
+	.social-wrapper{
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+	}
+}
+.social-wrapper{
+	padding-bottom: 25px;
+	background-color: black;
+}
+.bottom-footer{
+	background-color: $grey;
+	color: white;
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		float: left;
+		width: auto;
+		li{
+			float: left;
+			width: auto;
+			margin-right: 80px;
+			&:last-child{
+				margin-right: 0;
+			}
+			a{
+				color: white;
+				font-family: $tahoma;
+				font-size: 12px;
+				display: inline-block;
+				cursor: pointer;
+			}
+		}
+	}
+	padding: 5.5px 0;
+}
+.copy{
+	font-size: 12px;
+	float: right;
+}
 // //////////////
 //This file link includes resonsive style and it MUST always stays at the bottom of this file. If you need to type code, please type above to this link. Don't type below of responsive file link.
 // //////////////
