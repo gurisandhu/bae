@@ -40,9 +40,9 @@ gulp.task('styles', function() {
 
 // Image compressed tasks
 gulp.task('imagemin', function(){
-	gulp.src('uploads/*')
+	gulp.src('images/*')
 		.pipe(imagemin())
-		.pipe(gulp.dest('compressed/uploads'));
+		.pipe(gulp.dest('compressed/images'));
 });
 
 // Watch Task
