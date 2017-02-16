@@ -1,3 +1,18 @@
+// //////////////
+// Fonts
+// //////////////
+ 
+$theme-font: 'SamsungSharpSans-Bold',Sans-Serif;
+$theme-font-2: 'SamsungSharpSans-Medium',Sans-Serif;
+$theme-font-3: 'SamsungSharpSans-Regular',Sans-Serif;
+
+// //////////////
+// Colors
+// //////////////
+$theme: #0023a4;
+$light-theme: #d0d4ec;
+$light-theme-2: #7a81c0;
+
 body,input, textarea, keygen, select, button{
 	font-family: $theme-font;
 	font-size: 16px;

@@ -19,16 +19,16 @@
 	<div class="container">
 		<div class="desktop-header">
 			<div class="logo">
-				<img src="compressed/images/logo.png" alt="">
+				
 			</div>
 			<div class="desktop-menu">
 				<nav>
 					<ul>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
-						<li><a href=""></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
 						<li><a href="style-guide.php">Style</a></li>
 					</ul>
 				</nav>
