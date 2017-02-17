@@ -10,6 +10,7 @@ $tahoma : 'Tahoma', 'Geneva', sans-serif;
 // //////////////
 $grey: #63666a;
 $greylight: #d0d3d4;
+$greylight2: #e7e9e9;
 $theme: #fc4c02;
 $light-theme: #d0d4ec;
 $light-theme-2: #7a81c0;
@@ -171,7 +172,8 @@ th{
 	border-color: $theme;
 	color: white;
 	&:hover{
-		background-color: darken($theme, 10%);
+		-webkit-box-shadow: inset 1px 2px 5px rgba(0,0,0,.5);
+		        box-shadow: inset 1px 2px 5px rgba(0,0,0,.5);
 	}
 }
 // //////////////
@@ -232,13 +234,18 @@ th{
 	}
 }
 figure{
-	margin: 0;
+	margin: 20px 0;
+	float: left;
+	width: 100%;
 	img{
 		width: 100%;
+		float: left;
 	}
 }
 figcaption{
-	font-size: 12px;
+	font-size: 13px;
+	font-weight: 500;
+	font-family: $tahoma;
 	margin-top: 2px;
 }
 // //////////////
@@ -252,16 +259,42 @@ form{
 		clear: both;
 		display: block;
 	}
-	input{
+	input, textarea{
 		width: 100%;
 		background-color: transparent;
 	}
 	@include placeholder(black);
 }
+input[type="text"], textarea{
+	font-size: 14px;
+	letter-spacing: 2px;
+	color: black;
+	border: 1px solid black;
+	padding: 17px 10px;
+	font-family: $tahoma;
+}
+input[type="submit"], button{
+	font-family: $tahoma;
+	background-color: $theme;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14px;
+	padding: 7px 10px;
+	@include transition(.3);
+	&:hover{
+		background-color: darken($theme, 5%);
+		-webkit-box-shadow: inset 1px 2px 5px rgba(0,0,0,.5);
+				box-shadow: inset 1px 2px 5px rgba(0,0,0,.5);
+	}
+}
 .form-row{
 	float: left;
 	width: 100%;
 	margin-top: 15px;
+	&:first-child{
+		margin-top: 0;
+	}
 	.col-3{
 		@include col-3(2%, 0%);
 	}
@@ -383,5 +416,36 @@ select{
 		top: 6px;
 		width: 15px;
 		height: 15px;
+	}
+}
+blockquote{
+	background-color: $greylight2;
+	float: left;
+	width: 100%;
+	margin: 50px 0;
+	font-size: 47px;
+	color: black;
+	font-weight: bolder;
+	text-align: center;
+	padding: 67.5px 0;
+	letter-spacing: 1px;
+}
+.quote{
+	position: relative;
+	padding: 0 40px;
+	display: inline;
+	&:before, &:after{
+		position: absolute;
+		font-size: 64px;
+	}
+	&:before{
+		left: 12px;
+		top: -7px;
+		content: "\201C";
+	}
+	&:after{
+		right: 0;
+		bottom: -18px;
+		content: "\201D";
 	}
 }

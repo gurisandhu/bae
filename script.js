@@ -38,6 +38,15 @@ $(document).ready(function(){
     }
   });
 
-
+  // ++++++++++++++++++++
+  // Video 
+  // ++++++++++++++++++++
+  $('.video-button').each(function(){
+    $(this).click(function(){
+      $(this).parent().parent().parent().find('.video-wrapper').addClass('show');
+      var thisVideoIframe = $(this).parent().parent().parent().find('.video-wrapper iframe#video-to-play');
+      thisVideoIframe.attr("src", $(thisVideoIframe).attr("src").replace("autoplay=0", "autoplay=1"));
+    });
+  });
 
 });//End of Document ready

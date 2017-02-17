@@ -23,17 +23,17 @@
 <header class="main">
 	<div class="container">
 		<div class="desktop-header">
-			<a href="" class="logo">
+			<a href="/bae" class="logo">
 				<img src="compressed/images/logo.png" alt="FlightPath logo">
 			</a>
 			<div class="desktop-menu">
 				<nav>
 					<ul>
-						<li class="current-menu-item"><a href="">Government</a></li>
-						<li><a href="">Industry</a></li>
-						<li><a href="">Defence</a></li>
+						<li class="current-menu-item"><a href="front-page.php">Categories</a></li>
+						<li><a href="single.php">Article</a></li>
+						<li><a href="about.php">About Us</a></li>
+						<li><a href="contact.php">Contact</a></li>
 						<li><a href="">Technology</a></li>
-						<li><a href="">About US</a></li>
 						<li><a href="style-guide.php">Style</a></li>
 					</ul>
 				</nav>

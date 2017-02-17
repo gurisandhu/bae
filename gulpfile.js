@@ -16,6 +16,7 @@ gulp.task('serve', ['styles'], function(){
 	});
 	gulp.watch('compressed/*.css').on('change', browserSync.reload);
 	gulp.watch('compressed/*.js').on('change', browserSync.reload);
+	gulp.watch('compressed/images/*').on('change', browserSync.reload);
 	gulp.watch("*.php").on('change', browserSync.reload);
 });
 // Script Minified
@@ -50,7 +51,7 @@ gulp.task('imagemin', function(){
 gulp.task('watch', ['styles'], function(){
 	gulp.watch('script.js', ['script']);
 	gulp.watch('*.scss', ['styles']);
-	gulp.watch('uploads/*', ['imagemin']);
+	gulp.watch('images/*', ['imagemin']);
 });
 
 gulp.task('default', ['script', 'styles', 'imagemin', 'watch', 'serve']);
