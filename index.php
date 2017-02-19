@@ -15,7 +15,10 @@ Section: Feature Stories
 			<div class="table-cell">
 				<h2>Feature story #1</h2>
 				<div class="small-font">1 Hour Ago</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem odit, iure commodi voluptate, hic blanditiis maxime aperiam explicabo autem minus. Nesciunt doloremque labore dolor quaerat ullam aliquam odio, enim fugiat! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi vel repellendus id sint sed? Natus delectus ad magni veniam totam voluptatibus, esse, alias repudiandae ipsa a beatae placeat veritatis sit!</p>
+				<?php $textToTrim = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga.';
+						$textTrimmed = trimText($textToTrim, '...', 430);
+				 		?>
+						<p><?php echo $textTrimmed; ?></p>
 				<button type="button" class="button-1">Read More</button>
 			</div>
 		</div>	

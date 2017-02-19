@@ -23,13 +23,14 @@ Section: page title
 			</div>
 		</div>
 		<div class="row">
-			<figure><img src="compressed/images/article-1.png" alt="">
-				<figcaption>Caption: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur illo hic, temporibus debitis recusandae nam voluptates quidem.</figcaption>
+			<figure>
 				<ul class="social-2">
 					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 					<li><a href="#"><i class="fa fa-envelope"></i></a></li>
 				</ul>
+				<img src="compressed/images/article-1.png" alt="">
+				<figcaption>Caption: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur illo hic, temporibus debitis recusandae nam voluptates quidem.</figcaption>
 			</figure>
 		</div>
 		<div class="row">

@@ -55,10 +55,10 @@
 
 @mixin body-smooth($color, $color2){
 	body{
-	-webkit-animation: smooth 2s;
-     -moz-animation: smooth 2s;
-       -o-animation: smooth 2s;
-          animation: smooth 2s;
+	-webkit-animation: smooth 1s;
+     -moz-animation: smooth 1s;
+       -o-animation: smooth 1s;
+          animation: smooth 1s;
 }
 @-webkit-keyframes smooth{
 	from {

@@ -40,6 +40,8 @@ header{
 header{
 	&.main{
 		border-bottom: 3px solid $theme;
+		background-color: white;
+		@include transition(.3);
 	}
 }
 .logo{
@@ -284,7 +286,7 @@ footer{
 	bottom: 0;
 	right: 0;
 	z-index: 9;
-	width: 192px;
+	width: 235px;
 	margin: 0;
 	&:before{
 		position: absolute;
@@ -305,11 +307,14 @@ footer{
 		top: -13.4px;
 		font-size: 23px;
 	}
+	strong{
+		display: block;
+	}
 }
 .feature-stories{
 	height: 91vh;
 	width: 100vw;
-	min-height: 950px;
+	min-height: 700px;
 	.col-3{
 		height: 100%;
 		padding: 5%;
@@ -506,9 +511,10 @@ footer{
 }
 .social-2{
 	list-style: none;
-	position: absolute;
-	top: 0;
-	left: -67px;
+	position: fixed;
+	padding: 0;
+	margin-left: -60px;
+	z-index: 1;
 	width: 60px;
 	text-align: center;
 	li{
@@ -522,6 +528,7 @@ footer{
 		color: #9d9d9c;
 		display: block;
 		width: 100%;
+		cursor: pointer;
 		@include transition(.3);
 		&:hover{
 			color: darken(#9D9D9C, 7%);
@@ -597,7 +604,7 @@ figure{
 	}
 }
 .contributor-content{
-	height: 285px;
+	// height: 285px;
 	overflow: hidden;
 }
 .one-twoThird{
@@ -622,6 +629,25 @@ address{
 		display: block;
 		text-transform: uppercase;
 		margin-bottom: 5px;
+	}
+}
+.g-recaptcha {
+    margin: auto;
+    display: inline-block;
+    max-width: 300px;
+    width: 100%;
+}
+body.on-scrolled{
+	padding-top: 82px;
+	header{
+		&.main{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			right: 0;
+			z-index: 5;
+		}
 	}
 }
 // //////////////

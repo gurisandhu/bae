@@ -9,6 +9,9 @@
 				<input type="text" name="fname" placeholder="Enter your email address">
 			</div>
 			<div class="row">
+				 <div class="g-recaptcha" data-sitekey="6LcePAATAAAAAGPRWgx90814DTjgt5sXnNbV5WaW"></div>
+			</div>
+			<div class="row">
 				<input type="submit" value="Sign me up">
 			</div>
 		</form>

@@ -28,7 +28,7 @@ p{
 .container{
 	max-width: 1400+30px;
 }
-@include body-smooth($theme, transparent);
+@include body-smooth(white, transparent);
 .col-2{
 	@include col-2(0, 0);
 }

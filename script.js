@@ -31,7 +31,7 @@ $(document).ready(function(){
   $(window).scroll(function(){
     var scroll = $(window).scrollTop();
 
-    if (scroll >= 33){
+    if (scroll >= 41){
         $('body').addClass('on-scrolled');
     } else {
       $('body').removeClass('on-scrolled');
@@ -47,6 +47,17 @@ $(document).ready(function(){
       var thisVideoIframe = $(this).parent().parent().parent().find('.video-wrapper iframe#video-to-play');
       thisVideoIframe.attr("src", $(thisVideoIframe).attr("src").replace("autoplay=0", "autoplay=1"));
     });
+  });
+
+  // ++++++++++++++++++++
+  // On click Don't miss newsletter button go to form
+  // ++++++++++++++++++++
+
+  $('.dontmiss').click(function(){
+    $('html,body').animate({
+      scrollTop: $(".subscription").offset().top
+    }, 1000);
+    // $(this).hide();
   });
 
 });//End of Document ready

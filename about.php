@@ -28,10 +28,7 @@
 						<span class="orange">Pilot</span>
 					</div>
 					<div class="contributor-content">
-						<?php $textToTrim = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga.';
-						$textTrimmed = trimText($textToTrim, '', 433);
-				 		?>
-						<p><?php echo $textTrimmed; ?></p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quia doloremque magni, pariatur tempora ipsa eius explicabo omnis, neque enim aliquam culpa similique quo distinctio aut adipisci nostrum cum numquam.</p>
 					</div>
 				</div> <!-- col-3 -->
 				<div class="col-3">
@@ -51,7 +48,7 @@
 						<span class="orange">Pilot</span>
 					</div>
 					<div class="contributor-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui ipsa non rerum accusamus, ipsam, repellat ab eum, accusantium expedita nulla magnam sapiente consequatur, eius et. Dolore, tempore. Assumenda, maxime, repellat.</p>
 					</div>
 				</div> <!-- col-3 -->
 				<div class="col-3">
@@ -61,7 +58,7 @@
 						<span class="orange">Pilot</span>
 					</div>
 					<div class="contributor-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga. lorem</p>
 					</div>
 				</div> <!-- col-3 -->
 				<div class="col-3">
