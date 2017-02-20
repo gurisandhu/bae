@@ -1,4 +1,6 @@
-<?php include 'header.php'; ?>
+<?php 
+
+get_header(); ?>
 
 <!--++++++++++++++ 
 Section: banner
@@ -22,13 +24,10 @@ Section: banner
 <!--++++++++++++++ 
 Section: News
 ++++++++++++++ -->	
-<?php include 'news.php'; ?>
-
+<?php include(TEMPLATEPATH . '/news.php'); ?>
 <!--++++++++++++++ 
 Section: Subscription
 ++++++++++++++ -->	
-<?php include 'subscription-form.php'; ?>
-
-<?php include 'sub-footer.php'; ?>
-
-<?php include 'footer.php'; ?>
+<?php include(TEMPLATEPATH . '/subscription-form.php'); ?>
+<?php include(TEMPLATEPATH . '/sub-footer.php'); ?>
+<?php get_footer(); ?>

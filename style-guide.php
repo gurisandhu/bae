@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php get_header(); ?>
 
 <!--++++++++++++++ 
 Section: 
@@ -143,4 +143,4 @@ Section:
 	</div>		
 </section>
 
-<?php include 'footer.php'; ?>
+<?php get_footer(); ?>

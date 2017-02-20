@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+/*
+Template Name: About Us
+*/
+get_header();
+ ?>
 
 
 
@@ -87,13 +92,9 @@
 </section>
 
 
-
-
 <!--++++++++++++++ 
 Section: Subscription
 ++++++++++++++ -->	
-<?php include 'subscription-form.php'; ?>
-
-
-<?php include 'sub-footer.php'; ?>
-<?php include 'footer.php'; ?>
+<?php include(TEMPLATEPATH . '/subscription-form.php'); ?>
+<?php include(TEMPLATEPATH . '/sub-footer.php'); ?>
+<?php get_footer(); ?>

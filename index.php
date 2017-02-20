@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php get_header(); ?>
 
 <!--++++++++++++++ 
 Button: Don't miss a story
@@ -71,13 +71,10 @@ Section: News
 		<h2 class="orange">More of our recent stories</h2>
 	</div>
 </section>
-<?php include 'news.php'; ?>
-
+<?php include(TEMPLATEPATH . '/news.php'); ?>
 <!--++++++++++++++ 
 Section: Subscription
 ++++++++++++++ -->	
-<?php include 'subscription-form.php'; ?>
-
-
-<?php include 'sub-footer.php'; ?>
-<?php include 'footer.php'; ?>
+<?php include(TEMPLATEPATH . '/subscription-form.php'); ?>
+<?php include(TEMPLATEPATH . '/sub-footer.php'); ?>
+<?php get_footer(); ?>
