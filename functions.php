@@ -21,11 +21,11 @@ function my_styles_scripts(){
 
     wp_enqueue_style( 'bae-style' , get_template_directory_uri() . '/style.css', array(), '2.0.0', false, 'all');
 
-    wp_enqueue_script( 'bae-jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js');
+    wp_enqueue_script( 'bae-jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), true, 'all');
 
-    wp_enqueue_script( 'bae-jquery', 'https://www.google.com/recaptcha/api.js');
+    wp_enqueue_script( 'bae-captcha', 'https://www.google.com/recaptcha/api.js', array(), true, 'all');
   
-    wp_enqueue_script( 'bae-script', get_bloginfo('template_directory') . '/compressed/script.js');
+    wp_enqueue_script( 'bae-script', get_bloginfo('template_directory') . '/compressed/script.js', array(), true, 'all');
 }
 add_action('template_redirect', 'my_styles_scripts');
 //end of styles scripts
@@ -108,7 +108,7 @@ function create_my_taxonomies() {
             'feature_stories',
             array(
                 'labels'   => array(
-                    'name'  => 'Categories',
+                    'name'  => 'Story Categories',
                     'add_new_item' =>   'Add New Category',
                     'edit_item'    =>  'Edit Category',
                     'new_item_name' =>  'New Category',
@@ -134,22 +134,23 @@ function create_my_taxonomies() {
  }
 
 
-// *************************
-// Contact info
-// *************************
+// // *************************
+// // Contact info
+// // *************************
 
-if (function_exists('acf_add_options_page')){
-  $contact_info = acf_add_options_page(array(
-      'page_title'  =>  'Contact Info',
-      'menu_title'  => 'Contact Info',
-      'menu_slug'   =>  'contact-info-settings',
-      'capability'  =>  'edit_posts',
-      'icon_url'    =>  'dashicons-share',
-      'redirect'    =>  false,
-      'position'	=> 	1
-    ));
-  add_filter('menu_order', 'custom_menu_order', 1);
-}
+// if (function_exists('acf_add_options_page')){
+//   $contact_info = acf_add_options_page(array(
+//       'page_title'  =>  'Contact Info',
+//       'menu_title'  => 'Contact Info',
+//       'menu_slug'   =>  'contact-info-settings',
+//       'capability'  =>  'edit_posts',
+//       'icon_url'    =>  'dashicons-share',
+//       'redirect'    =>  false,
+//       'show_in_nav_menus'          => true,
+//       'position'	=> 	1
+//     ));
+//   add_filter('menu_order', 'custom_menu_order', 1);
+// }
 
 
  ?>

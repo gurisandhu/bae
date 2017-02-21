@@ -71,7 +71,34 @@ Section: News
 		<h2 class="orange">More of our recent stories</h2>
 	</div>
 </section>
-<?php include(TEMPLATEPATH . '/news.php'); ?>
+<?php 
+	$args = array(
+		'post_type' => 'feature_stories',
+		'post_per_page' => 7
+		);
+	$hp_stories = new WP_Query($args);
+ ?>
+<?php if ($hp_stories->have_posts() ) : ?>
+<section class="news">
+	<div class="container">
+		<?php while ($hp_stories->have_posts()) : $hp_stories->the_post(); ?>
+			<a href="<?php echo get_permalink(); ?>" class="col-4">
+				<div class="news-image" style="background-image: url('<?php the_post_thumbnail_url('thumbnail'); ?>');"></div>
+
+					<?php if ( is_archive() || is_single()): ?>
+						<div class="news-date"><?php echo get_the_date('d-M-Y'); ?></div>
+					<?php else: ?>
+						<div class="news-date"><?php echo get_the_terms(get_the_ID(),'stories_category')[0]->name; ?></div>
+					<?php endif; ?>
+				<?php $textToTrim = get_the_title();
+							$textTrimmed = trimText($textToTrim, '', 99);
+					 ?>
+				<h2 class="news-title"><?php echo $textTrimmed; ?></h2>
+			</a>
+		<?php endwhile; ?>
+	</div>
+</section>
+<?php endif; ?>
 <!--++++++++++++++ 
 Section: Subscription
 ++++++++++++++ -->	

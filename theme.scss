@@ -380,7 +380,7 @@ footer{
 	}
 }
 .video{
-	height: 100vh;
+	height: 91vh;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	     -o-background-size: cover;
@@ -637,19 +637,27 @@ address{
     max-width: 300px;
     width: 100%;
 }
-body.on-scrolled{
-	padding-top: 82px;
-	header{
-		&.main{
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			right: 0;
-			z-index: 5;
+body{
+	&.on-scrolled{
+		padding-top: 82px;
+		header{
+			&.main{
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				right: 0;
+				z-index: 5;
+			}
 		}
+		&.customize-support{
+			header.main{
+				top: 32px;
+			}
+		}	
 	}
 }
+
 // //////////////
 //This file link includes resonsive style and it MUST always stays at the bottom of this file. If you need to type code, please type above to this link. Don't type below of responsive file link.
 // //////////////

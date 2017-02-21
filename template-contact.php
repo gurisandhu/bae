@@ -1,4 +1,8 @@
-<?php include 'header.php'; ?>
+<?php 
+/*
+	Template Name: Contact
+*/
+get_header(); ?>
 
 <section class="inner-page inner-page-2">
 	<div class="container">
@@ -32,11 +36,10 @@
 		</div>
 	</div>
 </section>
+
 <!--++++++++++++++ 
 Section: Subscription
 ++++++++++++++ -->	
-<?php include 'subscription-form.php'; ?>
-
-
-<?php include 'sub-footer.php'; ?>
-<?php include 'footer.php'; ?>
+<?php include(TEMPLATEPATH . '/subscription-form.php'); ?>
+<?php include(TEMPLATEPATH . '/sub-footer.php'); ?>
+<?php get_footer(); ?>

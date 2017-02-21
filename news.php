@@ -1,72 +1,21 @@
+<?php if (have_posts() ) : ?>
 <section class="news">
 	<div class="container">
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-1.png');"></div>
-			<div class="news-date">Date</div>
-			<?php $textToTrim = 'Recent archived story, consectetur adipisicing elit. Debitis optio non, nam pariatur amet. Voluptas qui, minus.';
-						$textTrimmed = trimText($textToTrim, '', 99);
-				 ?>
-			<h2 class="news-title"><?php echo $textTrimmed; ?></h2>
-		</a>
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-2.png');"></div>
-			<div class="news-date">Date</div>
-			<h2 class="news-title">Recent archived story</h2>
-		</a>
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-3.png');"></div>
-			<div class="news-date">Date</div>
-			<h2 class="news-title">Recent archived story</h2>
-		</a>
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-4.png');"></div>
-			<div class="news-date">Date</div>
-			<h2 class="news-title">Recent archived story</h2>
-		</a>
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-2.png');"></div>
-			<div class="news-date">Date</div>
-			<h2 class="news-title">Recent archived story</h2>
-		</a>
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-3.png');"></div>
-			<div class="news-date">Date</div>
-			<h2 class="news-title">Recent archived story</h2>
-		</a>
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-4.png');"></div>
-			<div class="news-date">Date</div>
-			<h2 class="news-title">Recent archived story</h2>
-		</a>
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-2.png');"></div>
-			<div class="news-date">Date</div>
-			<h2 class="news-title">Recent archived story</h2>
-		</a>
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-3.png');"></div>
-			<div class="news-date">Date</div>
-			<h2 class="news-title">Recent archived story</h2>
-		</a>
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-4.png');"></div>
-			<div class="news-date">Date</div>
-			<h2 class="news-title">Recent archived story</h2>
-		</a>
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-2.png');"></div>
-			<div class="news-date">Date</div>
-			<h2 class="news-title">Recent archived story</h2>
-		</a>
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-3.png');"></div>
-			<div class="news-date">Date</div>
-			<h2 class="news-title">Recent archived story</h2>
-		</a>
-		<a href="" class="col-4">
-			<div class="news-image" style="background-image: url('compressed/images/news-4.png');"></div>
-			<div class="news-date">Date</div>
-			<h2 class="news-title">Recent archived story</h2>
-		</a>
+		<?php while (have_posts()) : the_post(); ?>
+			<a href="<?php echo get_permalink(); ?>" class="col-4">
+				<div class="news-image" style="background-image: url('<?php the_post_thumbnail_url('thumbnail'); ?>');"></div>
+
+					<?php if ( is_archive() || is_single()): ?>
+						<div class="news-date"><?php echo get_the_date('d-M-Y'); ?></div>
+					<?php else: ?>
+						<div class="news-date">Defence</div>
+					<?php endif; ?>
+				<?php $textToTrim = get_the_title();
+							$textTrimmed = trimText($textToTrim, '', 99);
+					 ?>
+				<h2 class="news-title"><?php echo $textTrimmed; ?></h2>
+			</a>
+		<?php endwhile; ?>
 	</div>
 </section>
+<?php endif; ?>

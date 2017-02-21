@@ -1,17 +1,30 @@
 <?php 
 
-get_header(); ?>
+get_header(); 
 
+
+$categories = get_queried_object();
+$cat_name = $categories->name;
+?>
+
+<?php 
+$counter = 0;
+if (have_posts()):
+while(have_posts()): the_post(); 
+$counter ++;
+if ($counter < 2):
+?>
 <!--++++++++++++++ 
 Section: banner
 ++++++++++++++ -->
 <section class="banner">
 	<div class="container">
-		<div class="banner-wrapper" style="background-image:url('compressed/images/banner.jpg');">
-			<a href="#" class="banner-content">
-				<h1>Feature story from Government</h1>
-				<div class="small-font">1 hour ago</div>
-				<?php $textToTrim = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis optio non, nam pariatur amet. Voluptas qui, minus. Recusandae repudiandae non alias eaque voluptas, cum at ipsum possimus voluptatem! Possimus, obcaecati. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis optio non, nam pariatur amet. Voluptas qui, minus. Recusandae repudiandae non alias eaque voluptas, cum at ipsum possimus voluptatem! Possimus, obcaecati. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis optio non, nam pariatur amet. Voluptas qui, minus. Recusandae repudiandae non alias eaque voluptas, cum at ipsum possimus voluptatem! Possimus, obcaecati.';
+		<div class="banner-wrapper" style="background-image:url('<?php the_post_thumbnail_url('full'); ?>');">
+			<a href="<?php echo get_the_permalink(); ?>" class="banner-content">
+				<h1><?php echo get_the_title(); ?> from <?php echo $cat_name; ?></h1>
+
+				<div class="small-font"><?php echo get_the_date('U'); ?> hour ago</div>
+				<?php $textToTrim = get_the_content();
 						$textTrimmed = trimText($textToTrim, '', 155);
 				 ?>
 				<p><?php echo $textTrimmed; ?></p>
@@ -20,7 +33,10 @@ Section: banner
 		</div>
 	</div>
 </section>
+<?php endif; ?>
+<?php endwhile; ?>				
 
+<?php endif; ?>
 <!--++++++++++++++ 
 Section: News
 ++++++++++++++ -->	
