@@ -41,14 +41,15 @@ Section: footer
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos id quae culpa laborum, aliquid et, nam. Eveniet, minus velit, voluptates eos dicta inventore officia maxime laborum ullam dolor natus corrupti.</p>
 		</div>
 	</div>
-</footer>	
-<section class="social-wrapper">
-	<div class="container">
-		<ul class="social">
-			<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-			<li><a href="#" target="_blank"><i class="fa fa-slideshare"></i></a></li>
-			<li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
-		</ul>
-	</div>
-</section>
+</footer>
+<?php if (have_rows('social_media')) { ?>	
+	<section class="social-wrapper">
+		<div class="container">
+			<ul class="social">
+				<?php while(have_rows('social_media')) { the_row(); ?>
+				<li><a href="<?php echo get_sub_field('social_link'); ?>" target="_blank"><i class="fa fa-<?php echo get_sub_field('social_icon'); ?>"></i></a></li>
+				<?php } ?>
+			</ul>
+		</div>
+	</section>
+<?php } ?>

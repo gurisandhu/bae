@@ -10,11 +10,13 @@ get_header(); ?>
 			<h2 class="orange">Contact Flight Path</h2>
 		</div>
 		<div class="row one-twoThird">
+			<?php if (get_field('contact_address')) {?>
 			<div class="one-third">
 				<address><span>Address</span>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis error quas quo blanditiis nostrum dolorem ad eius quidem optio numquam.
+				 <?php echo get_field('contact_address'); ?>
 				</address>
 			</div>
+			<?php } ?>
 			<div class="two-third">
 				<form action="" class="contact-form">
 					<div class="form-input-area row">

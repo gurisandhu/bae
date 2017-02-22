@@ -205,7 +205,8 @@ header{
 footer{
 	background-color: black;
 	color: white;
-	padding: 80px 0;
+	padding: 80px 0 55px;
+	display: none;
 	h6{
 		font-size: 20px;
 		position: absolute;
@@ -247,6 +248,7 @@ footer{
 	}
 }
 .social-wrapper{
+	padding-top: 25px;
 	padding-bottom: 25px;
 	background-color: black;
 }
@@ -543,7 +545,7 @@ figure{
 }
 .inner-video-container{
 	position: relative;
-	margin: 50px 0;
+	margin: 0;
 	color: #FFF;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
@@ -579,8 +581,21 @@ figure{
 }
 .contributors{
 	padding: 70px 0;
+}
+.inner-page{
 	.col-3{
 		@include col-3(5%,10%);
+		overflow: hidden;
+		.row{
+			margin-top: 30px;
+		}
+	}
+	.col-2{
+		overflow: hidden;
+		@include col-2(5%,10%);
+		.row{
+			margin-top: 30px;
+		}
 	}
 }
 .contributor-image{
@@ -655,6 +670,14 @@ body{
 				top: 32px;
 			}
 		}	
+	}
+}
+.custom-row{
+	float: left;
+	width: 100%;
+	margin-top: 50px;
+	&:first-child{
+		// margin-top: 0;
 	}
 }
 

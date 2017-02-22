@@ -12,7 +12,5 @@
 Section: Subscription
 ++++++++++++++ -->	
 <?php include(TEMPLATEPATH . '/subscription-form.php'); ?>
-
-
 <?php include(TEMPLATEPATH . '/sub-footer.php'); ?>
 <?php get_footer(); ?>

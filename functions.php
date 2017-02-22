@@ -72,7 +72,7 @@ add_theme_support('post-thumbnails');
             'parent'                =>  'Parent Story'
         ),
             // 'public'            =>  true,
-            'menu_position'     =>  1,
+            'menu_position'     =>  2,
             // 'supports'          =>  array( 'title', 'editor', 'comments', 'thumbnail'),
             'taxonomies'        =>  array( 'create_my_taxonomies'),
             'menu_icon'         =>  'dashicons-megaphone',
@@ -133,24 +133,31 @@ function create_my_taxonomies() {
 
  }
 
+// *************************
+//  Admin menu 
+// *************************
+function remove_menus(){
+  remove_menu_page( 'edit.php' );                   //Posts  
+}
+add_action( 'admin_menu', 'remove_menus' );
 
-// // *************************
-// // Contact info
-// // *************************
+// *************************
+// Contact info
+// *************************
 
-// if (function_exists('acf_add_options_page')){
-//   $contact_info = acf_add_options_page(array(
-//       'page_title'  =>  'Contact Info',
-//       'menu_title'  => 'Contact Info',
-//       'menu_slug'   =>  'contact-info-settings',
-//       'capability'  =>  'edit_posts',
-//       'icon_url'    =>  'dashicons-share',
-//       'redirect'    =>  false,
-//       'show_in_nav_menus'          => true,
-//       'position'	=> 	1
-//     ));
-//   add_filter('menu_order', 'custom_menu_order', 1);
-// }
+if (function_exists('acf_add_options_page')){
+  $contact_info = acf_add_options_page(array(
+      'page_title'  =>  'Misc. Info',
+      'menu_title'  => 'Misc. Info',
+      'menu_slug'   =>  'misc-info-settings',
+      'capability'  =>  'edit_posts',
+      'icon_url'    =>  'dashicons-share',
+      'redirect'    =>  false,
+      'show_in_nav_menus'          => true,
+      'position'	=> 	3
+    ));
+  add_filter('menu_order', 'custom_menu_order', 3);
+}
 
 
  ?>

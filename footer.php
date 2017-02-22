@@ -2,9 +2,9 @@
 	<div class="container">
 		<div class="col-2">
 			<ul>
-				<li><a href="#">Accessibility</a></li>
-				<li><a href="#">Terms &amp; Conditions</a></li>
-				<li><a href="#">Privacy</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/' )); ?>/accessibility/">Accessibility</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/' )); ?>/terms-conditions/">Terms &amp; Conditions</a></li>
+				<li><a href="<?php echo esc_url( home_url( '/' )); ?>/privacy/">Privacy</a></li>
 				<li><a href="#">Sitemap</a></li>
 			</ul>
 		</div>

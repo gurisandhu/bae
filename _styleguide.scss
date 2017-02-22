@@ -88,6 +88,7 @@ a{
 }
 ul,ol{
 	padding-left: 18px;
+	font-family: $tahoma;
 }
 .small-font{
 	font-family: $tahoma;
@@ -234,7 +235,7 @@ th{
 	}
 }
 figure{
-	margin: 20px 0;
+	margin: 0;
 	float: left;
 	width: 100%;
 	img{
@@ -242,7 +243,7 @@ figure{
 		float: left;
 	}
 }
-figcaption{
+figcaption, p.wp-caption-text{
 	font-size: 13px;
 	font-weight: 500;
 	font-family: $tahoma;
@@ -422,7 +423,7 @@ blockquote{
 	background-color: $greylight2;
 	float: left;
 	width: 100%;
-	margin: 50px 0;
+	margin: 50px 0 0;
 	font-size: 47px;
 	color: black;
 	font-weight: bolder;

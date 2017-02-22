@@ -9,10 +9,10 @@ $cat_name = $categories->name;
 
 <?php 
 $counter = 0;
-if (have_posts()):
-while(have_posts()): the_post(); 
+if (have_posts()){
+while(have_posts()){ the_post(); 
 $counter ++;
-if ($counter < 2):
+if ($counter < 2){
 ?>
 <!--++++++++++++++ 
 Section: banner
@@ -33,10 +33,7 @@ Section: banner
 		</div>
 	</div>
 </section>
-<?php endif; ?>
-<?php endwhile; ?>				
-
-<?php endif; ?>
+<?php } } } ?>
 <!--++++++++++++++ 
 Section: News
 ++++++++++++++ -->	

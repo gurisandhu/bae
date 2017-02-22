@@ -11,82 +11,51 @@ get_header();
 <section class="inner-page inner-page-2">
 	<div class="container">
 		<div class="row">
-			<h2 class="orange">About Flight Path</h2>
+			<h2 class="orange"><?php echo get_the_title(); ?></h2>
 		</div>
-		<figure>
-			<img src="compressed/images/about.png" alt="">
-		</figure>
-		<div class="row">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam quis reiciendis perspiciatis adipisci cum explicabo quos quas magni provident. Veritatis vero rerum hic et praesentium unde quaerat vel repellat at.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quia dignissimos voluptatibus illo optio, sequi error id et esse aliquam nobis saepe voluptatum exercitationem. Dolore consectetur, debitis corrupti quibusdam fugit.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat iste et consequuntur quis incidunt omnis neque eos ipsa alias, veritatis, eaque, magnam magni ullam molestiae hic nulla quisquam impedit ut.</p>
-		</div>
+		<?php $thumbnail_id = get_post_thumbnail_id( $post->ID );
+				$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+				 ?>
+		<?php if($thumbnail_id) {?>
+			<div class="custom-row">
+				<figure>
+					<img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo $alt; ?>">
+					<figcaption>Caption: <?php the_post_thumbnail_caption(); ?></figcaption>
+				</figure>
+			</div>
+		<?php } ?>
+		<?php if (have_posts()){ ?>
+			<div class="custom-row">
+				<?php
+					while(have_posts()) { the_post(); 
+						the_content();
+					} ?>
+			</div>
+		<?php } ?>	
 		<div class="contributors row">
+			<?php if (get_field('about_row_title')) {?>
+				<div class="row">
+					<h2 class="orange"><?php echo get_field('about_row_title'); ?></h2>
+				</div>
+			<?php } ?>
+
+			<?php if(have_rows('about_contributors')) {?>
 			<div class="row">
-				<h2 class="orange">Flight Path contributors</h2>
+				<?php while(have_rows('about_contributors')) { the_row(); ?>
+				<div class="col-3">
+					<?php $contributor_image = get_sub_field('contributor_image'); ?>
+					<div class="contributor-image" style="background-image:url('<?php echo $contributor_image['url']; ?>');"></div>
+					<div class="contributor-name">
+						<?php echo get_sub_field('contributor_name'); ?>
+						<span class="orange"><?php echo get_sub_field('contributor_position'); ?></span>
+					</div>
+					<div class="contributor-content">
+						<p><?php echo get_sub_field('contributor_bio'); ?></p>
+					</div>
+				</div> <!-- col-3 -->
+				<?php } ?>
 			</div>
-			<div class="row">
-				<div class="col-3">
-					<div class="contributor-image" style="background-image:url('compressed/images/contributor-1.png');v"></div>
-					<div class="contributor-name">
-						Contributor Name
-						<span class="orange">Pilot</span>
-					</div>
-					<div class="contributor-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum quia doloremque magni, pariatur tempora ipsa eius explicabo omnis, neque enim aliquam culpa similique quo distinctio aut adipisci nostrum cum numquam.</p>
-					</div>
-				</div> <!-- col-3 -->
-				<div class="col-3">
-					<div class="contributor-image" style="background-image:url('compressed/images/contributor-2.png');v"></div>
-					<div class="contributor-name">
-						Contributor Name
-						<span class="orange">Pilot</span>
-					</div>
-					<div class="contributor-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga.</p>
-					</div>
-				</div> <!-- col-3 -->
-				<div class="col-3">
-					<div class="contributor-image" style="background-image:url('compressed/images/contributor-3.png');v"></div>
-					<div class="contributor-name">
-						Contributor Name
-						<span class="orange">Pilot</span>
-					</div>
-					<div class="contributor-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui ipsa non rerum accusamus, ipsam, repellat ab eum, accusantium expedita nulla magnam sapiente consequatur, eius et. Dolore, tempore. Assumenda, maxime, repellat.</p>
-					</div>
-				</div> <!-- col-3 -->
-				<div class="col-3">
-					<div class="contributor-image" style="background-image:url('compressed/images/contributor-1.png');v"></div>
-					<div class="contributor-name">
-						Contributor Name
-						<span class="orange">Pilot</span>
-					</div>
-					<div class="contributor-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga. lorem</p>
-					</div>
-				</div> <!-- col-3 -->
-				<div class="col-3">
-					<div class="contributor-image" style="background-image:url('compressed/images/contributor-2.png');v"></div>
-					<div class="contributor-name">
-						Contributor Name
-						<span class="orange">Pilot</span>
-					</div>
-					<div class="contributor-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga.</p>
-					</div>
-				</div> <!-- col-3 -->
-				<div class="col-3">
-					<div class="contributor-image" style="background-image:url('compressed/images/contributor-3.png');v"></div>
-					<div class="contributor-name">
-						Contributor Name
-						<span class="orange">Pilot</span>
-					</div>
-					<div class="contributor-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non nesciunt dolorum dignissimos saepe eos quas! Quaerat voluptatibus atque deserunt, ratione iusto provident, dicta magnam fuga animi cum perspiciatis, minus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita aut quos, fugiat laboriosam esse soluta at dolores. Id, cum voluptatem nihil quam dolores omnis harum, asperiores recusandae, eaque quia, fuga.</p>
-					</div>
-				</div> <!-- col-3 -->
-			</div>
+			<?php } ?>
 		</div>
 	</div>
 </section>
