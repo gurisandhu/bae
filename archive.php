@@ -21,7 +21,7 @@ Section: banner
 	<div class="container">
 		<div class="banner-wrapper" style="background-image:url('<?php the_post_thumbnail_url('full'); ?>');">
 			<a href="<?php echo get_the_permalink(); ?>" class="banner-content">
-				<h1><?php echo get_the_title(); ?> from <?php echo $cat_name; ?></h1>
+				<h1><?php echo get_the_title(); ?></h1>
 
 				<div class="small-font"><?php echo get_the_date('U'); ?> hour ago</div>
 				<?php $textToTrim = get_the_content();

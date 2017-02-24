@@ -20,6 +20,14 @@ header{
 		color: white;	
 	}
 }
+header{
+	position: relative;
+	z-index: 10;
+	background-color: #FFF;
+}
+section{
+	background-color: white;
+}
 .bae-logo{
 	float: right;
 	padding: 11px 0;
@@ -74,6 +82,7 @@ header{
 		li{
 			float: left;
 			margin-right: 25px;
+			font-family: $theme-font;
 			&:last-child{
 				margin-right: 0;
 			}
@@ -206,7 +215,6 @@ footer{
 	background-color: black;
 	color: white;
 	padding: 80px 0 55px;
-	display: none;
 	h6{
 		font-size: 20px;
 		position: absolute;
@@ -217,9 +225,8 @@ footer{
 	p{
 		font-size: 13px;
 		line-height: 1.6;
-		margin-bottom: 30px;
 	}
-	.col-4{
+	.col-3{
 		padding-right: 60px;
 		padding-top: 40px;
 		position: relative;
@@ -245,6 +252,9 @@ footer{
 		position: absolute;
 		bottom: 10px;
 		left: 0;
+	}
+	a{
+		color: white;
 	}
 }
 .social-wrapper{
@@ -312,6 +322,10 @@ footer{
 	strong{
 		display: block;
 	}
+}
+.feature-stories, .recent-stories, .news, .subscription, .bottom-footer, .social-wrapper, footer{
+	position: relative;
+	z-index: 5;
 }
 .feature-stories{
 	height: 91vh;
@@ -388,7 +402,6 @@ footer{
 	     -o-background-size: cover;
 	        background-size: cover;
 	background-position: center;
-	background-attachment: fixed;
 	padding: 50px 0;
 	position: relative;
 	color: white;
@@ -400,7 +413,7 @@ footer{
 	}
 	position: relative;
 	&:after{
-		z-index: 1;
+		z-index: 3;
 		content: "";
 		position: absolute;
 		top: 0;
@@ -413,7 +426,19 @@ footer{
 	}
 	.table{
 		position: relative;
-		z-index: 2;
+		z-index: 4;
+	}
+	&.hide{
+		&:after{
+			z-index: 0;
+		}
+		.table{
+			z-index: 0;
+		}
+	}
+	.video-wrapper{
+		z-index: 3;
+		position: fixed;
 	}
 }
 .play-video{
@@ -422,7 +447,7 @@ footer{
 		font-size: 110.9px;
 	}
 }
-.video-button{
+.video-button, .hero-video-button{
 	cursor: pointer;
 	&:hover{
 		.play-video{
@@ -437,8 +462,8 @@ footer{
 	}
 }
 .recent-stories{
-	margin-top: 70px;
-	margin-bottom: 30px;
+	padding-top: 70px;
+	padding-bottom: 30px;
 }
 // Embeded videos style
 .embed-container { 
@@ -461,12 +486,7 @@ footer{
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 3;
 	@include transition(.3);
-	display: none;
-	&.show{
-			display: block;
-	}
 }
 .breadcrumb{
 	list-style: none;
@@ -567,6 +587,14 @@ figure{
 		position: relative;
 		z-index: 2;
 	}
+	&.show-inner-video{
+		.video-wrapper{
+			z-index: 9;
+		}
+	}
+	.video-wrapper{
+		z-index: -9;
+	}
 }
 .quote-by{
 	font-size: 27px;
@@ -662,7 +690,6 @@ body{
 				left: 0;
 				width: 100%;
 				right: 0;
-				z-index: 5;
 			}
 		}
 		&.customize-support{
@@ -676,11 +703,42 @@ body{
 	float: left;
 	width: 100%;
 	margin-top: 50px;
-	&:first-child{
-		// margin-top: 0;
-	}
 }
 
+.form-validation{
+	background-color: $greylight2;
+	float: left;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	@include transition(.3);
+	li{
+		padding: 0 20px;
+		margin-top: 10px;
+		float: left;
+		width: 100%;
+		font-size: 14px;
+		letter-spacing: 2px;
+		color: black;
+		font-family: $tahoma;
+		&:last-child{
+			margin-bottom: 20px;
+		}
+		&:first-child{
+			margin-top: 20px;
+		}
+	}
+}
+.error-input, input.error-input{
+	border-color: #ff8e8e;
+}
+.error-text{
+	color: $theme;
+}
+.captcha{
+	display: none;
+}
 // //////////////
 //This file link includes resonsive style and it MUST always stays at the bottom of this file. If you need to type code, please type above to this link. Don't type below of responsive file link.
 // //////////////

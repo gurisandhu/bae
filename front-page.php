@@ -34,20 +34,51 @@ Section: Feature Stories
 <!--++++++++++++++ 
 Section: Video
 ++++++++++++++ -->
-<section class="video center" style="background-image: url('https://media.tenor.co/images/4e72a0f2c4712de0db98ce2643c3b8b0/tenor.gif');">
+<?php if(get_field('video_id', 'option')) {?>
+<section class="video hero-video center">
 	<div class="table">
 		<div class="table-cell">
-			<div class="video-button">
-				<h3>Video headline</h3>
-				<div class="small-font">1 hour ago</div>
+			<div class="hero-video-button">
+				<?php if(get_field('video_headline', 'option')) {?>
+					<h3><?php echo get_field('video_headline', 'option'); ?></h3>
+				<?php } ?>
+				<?php if(get_field('time_uploaded', 'option')) {?>
+				<div class="small-font"><?php echo get_field('time_uploaded', 'option'); ?> hour ago</div>
+				<?php } ?>
 				<div class="play-video"><i class="fa fa-play-circle"></i></div>
 			</div>
 		</div>
 	</div>
 	<div class="video-wrapper">
-		<div class='embed-container hide'><iframe id="video-to-play" src='https://www.youtube.com/embed/jihB2qPq7O0?wmode=transparent&amp;autoplay=0&amp;autohide=1' frameborder='0' allowfullscreen></iframe></div>
+		<div class='embed-container'>
+			<div id="player"></div>
+		</div>
 	</div>
 </section>
+
+ <script>
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/player_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubePlayerAPIReady() {
+        player = new YT.Player('player', {
+          playerVars: { 'autoplay': 1, 'controls': 1, 'autohide':1,'wmode':'opaque', 'loop':1, 'list': '<?php echo get_field("video_id", "option"); ?>' },
+          videoId: '',
+          events: {
+            'onReady': onPlayerReady
+        }
+        });
+      }
+
+      function onPlayerReady(event) {
+        event.target.mute();
+      }
+
+</script>
+<?php } ?>
 
 <!--++++++++++++++ 
 Section: News

@@ -99,6 +99,7 @@ ul,ol{
 	letter-spacing: 1px;
 	word-spacing: 1px;
 	margin-bottom: 20px;
+	display: none;
 }
 .blue{
 	color: $theme;
@@ -194,6 +195,7 @@ th{
 		height: auto;
 		text-align: center;
 		vertical-align: middle;
+		font-family: $theme-font;
 		&:last-child{
 			margin-right: 0;
 		}

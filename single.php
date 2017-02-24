@@ -35,7 +35,7 @@ Section: page title
 			<div class="custom-row">
 				<figure>
 					<img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo $alt; ?>">
-					<figcaption>Caption: <?php the_post_thumbnail_caption(); ?></figcaption>
+					<figcaption><?php the_post_thumbnail_caption(); ?></figcaption>
 				</figure>
 			</div>
 		<?php } ?>
@@ -77,7 +77,7 @@ Section: page title
 
 									?>
 									<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>">
-									<figcaption>Caption: <?php echo $caption; ?></figcaption>
+									<figcaption><?php echo $caption; ?></figcaption>
 								</figure>
 							</div>
 							<?php } ?>
@@ -135,7 +135,7 @@ Section: page title
 
 										?>
 										<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>">
-										<figcaption>Caption: <?php echo $caption; ?></figcaption>
+										<figcaption><?php echo $caption; ?></figcaption>
 									</figure>
 								</div>
 								<?php } ?>
@@ -182,7 +182,7 @@ Section: page title
 
 										?>
 										<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>">
-										<figcaption>Caption: <?php echo $caption; ?></figcaption>
+										<figcaption><?php echo $caption; ?></figcaption>
 									</figure>
 								</div>
 								<?php } ?>
@@ -212,161 +212,7 @@ Section: page title
 
 				<?php } ?>
 
-				<?php if (get_row_layout() == 'three_columns') {?>
-				<section class="inner-page">
-					<div class="container">
-						<?php $col_1_3 = get_sub_field('column_1_3'); ?>
-						<?php $col_2_3 = get_sub_field('column_2_3'); ?>
-						<?php $col_3_3 = get_sub_field('column_3_3'); ?>
-						<?php $sub_loops_1_3 = $col_1_3["stories_template_group"]; ?>
-						<?php $sub_loops_2_3 = $col_2_3["stories_template_group"]; ?>
-						<?php $sub_loops_3_3 = $col_3_3["stories_template_group"]; ?>
-						<div class="custom-row">
-						<div class="col-3">
-							<?php foreach($sub_loops_1_3 as $sub_loop) {?>
-								<?php if ($sub_loop[acf_fc_layout] == "stories_template_group_text_editor") {?>
-								<div class="row">
-									<?php echo($sub_loop["stories_template_group_text_editor_content"]); ?>
-								</div>
-								<?php } ?>
-								<?php if ($sub_loop[acf_fc_layout] == "stories_template_group_image") {?>
-								<div class="row">
-									<figure>
-										<!-- <ul class="social-2">
-											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#"><i class="fa fa-envelope"></i></a></li>
-										</ul> -->
-										<?php 
-										$url = $sub_loop["stories_template_group_image_content"]['url']; 
-										$alt = $sub_loop["stories_template_group_image_content"]['alt']; 
-										$title = $sub_loop["stories_template_group_image_content"]['title']; 
-										$caption = $sub_loop["stories_template_group_image_content"]['caption']; 
-
-										?>
-										<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>">
-										<figcaption>Caption: <?php echo $caption; ?></figcaption>
-									</figure>
-								</div>
-								<?php } ?>
-								<?php if ($sub_loop[acf_fc_layout] == "stories_template_group_video") {?>
-								<div class="row">
-									<div class="inner-video-container center" style="background-image: url('https://img.youtube.com/vi/<?php echo($sub_loop["stories_template_group_video_content"]); ?>/maxresdefault.jpg');">
-											<div class="table">
-												<div class="table-cell">
-													<div class="video-button">
-														<div class="play-video">
-															<i class="fa fa-play-circle"></i>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="video-wrapper">
-												<div class='embed-container'><iframe id="video-to-play" src='https://www.youtube.com/embed/<?php echo($sub_loop["stories_template_group_video_content"]); ?>?wmode=transparent&amp;autoplay=0&amp;autohide=1' frameborder='0' allowfullscreen></iframe></div>
-											</div>
-										</div>
-								</div>
-								<?php } ?>
-							<?php } ?>
-						</div>
-						<div class="col-3">
-							<?php foreach($sub_loops_2_3 as $sub_loop) {?>
-								<?php if ($sub_loop[acf_fc_layout] == "stories_template_group_text_editor") {?>
-								<div class="row">
-									<?php echo($sub_loop["stories_template_group_text_editor_content"]); ?>
-								</div>
-								<?php } ?>
-								<?php if ($sub_loop[acf_fc_layout] == "stories_template_group_image") {?>
-								<div class="row">
-									<figure>
-										<!-- <ul class="social-2">
-											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#"><i class="fa fa-envelope"></i></a></li>
-										</ul> -->
-										<?php 
-										$url = $sub_loop["stories_template_group_image_content"]['url']; 
-										$alt = $sub_loop["stories_template_group_image_content"]['alt']; 
-										$title = $sub_loop["stories_template_group_image_content"]['title']; 
-										$caption = $sub_loop["stories_template_group_image_content"]['caption']; 
-
-										?>
-										<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>">
-										<figcaption>Caption: <?php echo $caption; ?></figcaption>
-									</figure>
-								</div>
-								<?php } ?>
-								<?php if ($sub_loop[acf_fc_layout] == "stories_template_group_video") {?>
-								<div class="row">
-									<div class="inner-video-container center" style="background-image: url('https://img.youtube.com/vi/<?php echo($sub_loop["stories_template_group_video_content"]); ?>/maxresdefault.jpg');">
-											<div class="table">
-												<div class="table-cell">
-													<div class="video-button">
-														<div class="play-video">
-															<i class="fa fa-play-circle"></i>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="video-wrapper">
-												<div class='embed-container'><iframe id="video-to-play" src='https://www.youtube.com/embed/<?php echo($sub_loop["stories_template_group_video_content"]); ?>?wmode=transparent&amp;autoplay=0&amp;autohide=1' frameborder='0' allowfullscreen></iframe></div>
-											</div>
-										</div>
-								</div>
-								<?php } ?>
-							<?php } ?>
-						</div>
-						<div class="col-3">
-							<?php foreach($sub_loops_3_3 as $sub_loop) {?>
-								<?php if ($sub_loop[acf_fc_layout] == "stories_template_group_text_editor") {?>
-								<div class="row">
-									<?php echo($sub_loop["stories_template_group_text_editor_content"]); ?>
-								</div>
-								<?php } ?>
-								<?php if ($sub_loop[acf_fc_layout] == "stories_template_group_image") {?>
-								<div class="row">
-									<figure>
-										<!-- <ul class="social-2">
-											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#"><i class="fa fa-envelope"></i></a></li>
-										</ul> -->
-										<?php 
-										$url = $sub_loop["stories_template_group_image_content"]['url']; 
-										$alt = $sub_loop["stories_template_group_image_content"]['alt']; 
-										$title = $sub_loop["stories_template_group_image_content"]['title']; 
-										$caption = $sub_loop["stories_template_group_image_content"]['caption']; 
-
-										?>
-										<img src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>">
-										<figcaption>Caption: <?php echo $caption; ?></figcaption>
-									</figure>
-								</div>
-								<?php } ?>
-								<?php if ($sub_loop[acf_fc_layout] == "stories_template_group_video") {?>
-								<div class="row">
-									<div class="inner-video-container center" style="background-image: url('https://img.youtube.com/vi/<?php echo($sub_loop["stories_template_group_video_content"]); ?>/maxresdefault.jpg');">
-											<div class="table">
-												<div class="table-cell">
-													<div class="video-button">
-														<div class="play-video">
-															<i class="fa fa-play-circle"></i>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="video-wrapper">
-												<div class='embed-container'><iframe id="video-to-play" src='https://www.youtube.com/embed/<?php echo($sub_loop["stories_template_group_video_content"]); ?>?wmode=transparent&amp;autoplay=0&amp;autohide=1' frameborder='0' allowfullscreen></iframe></div>
-											</div>
-										</div>
-								</div>
-								<?php } ?>
-							<?php } ?>
-						</div>
-						</div><!-- custom-row -->
-					</div>
-				</section>
-				<?php } ?>
+				
 				<?php if (get_row_layout() == 'single_row_blockquote') {
 						$blockquote_content = get_sub_field('single_row_blockquote_content');
 

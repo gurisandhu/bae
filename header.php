@@ -17,8 +17,8 @@
 		}
 		</style>
 	<![endif]-->
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/compressed/images/fevicon.ico" type="image/x-icon">
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/compressed/images/fevicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/compressed/images/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/compressed/images/favicon.ico" type="image/x-icon">
 	<?php wp_head(); ?>
 </head>
 <body>

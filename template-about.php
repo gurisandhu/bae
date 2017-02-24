@@ -20,7 +20,7 @@ get_header();
 			<div class="custom-row">
 				<figure>
 					<img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php echo $alt; ?>">
-					<figcaption>Caption: <?php the_post_thumbnail_caption(); ?></figcaption>
+					<figcaption><?php the_post_thumbnail_caption(); ?></figcaption>
 				</figure>
 			</div>
 		<?php } ?>

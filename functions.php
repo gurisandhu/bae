@@ -159,5 +159,69 @@ if (function_exists('acf_add_options_page')){
   add_filter('menu_order', 'custom_menu_order', 3);
 }
 
+// *************************
+// Add current-menu-item in custom taxonomy category
+// *************************
+// Get menus to play nicely with the submenu script
+// blissfully borrowed from Post Type Archive Links plugin, thanks @stephenharris, @F J Kaiser, @ryancurban
+function mrw_tax_archive_current( $items ) {
+    foreach ( $items as $item ) {
+        if ( 'taxonomy' !== $item->type )
+            continue;
+
+        global $post;
+
+        if( !$post )
+            continue;
+
+        $taxonomy = $item->object;
+        $taxonomy_term = $item->object_id;
+        if (
+            ! is_tax( $taxonomy, $taxonomy_term )
+            AND ! has_term( $taxonomy_term, $taxonomy, $post->ID )
+        )
+            continue;
+
+        // Make item current
+        $item->current = true;
+        $item->classes[] = 'current-menu-item';
+
+        // Loop through ancestors and give them 'parent' or 'ancestor' class
+        $active_anc_item_ids = mrw_get_item_ancestors( $item );
+        foreach ( $items as $key => $parent_item ) {
+            $classes = (array) $parent_item->classes;
+
+            // If menu item is the parent
+            if ( $parent_item->db_id == $item->menu_item_parent ) {
+                $classes[] = 'current-menu-parent';
+                $items[ $key ]->current_item_parent = true;
+            }
+
+            // If menu item is an ancestor
+            if ( in_array( intval( $parent_item->db_id ), $active_anc_item_ids ) ) {
+                $classes[] = 'current-menu-ancestor';
+                $items[ $key ]->current_item_ancestor = true;
+            }
+
+            $items[ $key ]->classes = array_unique( $classes );
+        }
+    }
+
+    return $items;
+}
+add_filter('wp_nav_menu_objects','mrw_tax_archive_current');
+
+function mrw_get_item_ancestors( $item ) {
+    $anc_id = absint( $item->db_id );
+
+    $active_anc_item_ids = array();
+    while (
+        $anc_id = get_post_meta( $anc_id, '_menu_item_menu_item_parent', true )
+        AND ! in_array( $anc_id, $active_anc_item_ids )
+    )
+        $active_anc_item_ids[] = $anc_id;
+
+    return $active_anc_item_ids;
+}
 
  ?>
