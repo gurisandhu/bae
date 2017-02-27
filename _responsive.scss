@@ -1,6 +1,252 @@
-@media screen and (max-width: 550px){
-	body{
-		background-color: red;
+// //////////////
+// Header
+// //////////////
+@media screen and (max-width: 530px){
+	.bae-logo{
+		padding: 6px 0;
 	}
-
+	.logo{
+		width: 250px;
+		padding: 10px 15px;
+	}
+	.menu-button-wrapper{
+		top: 14px;
+	}
+}
+@media screen and (max-width: 450px){
+	.bae-logo span{
+		display: none;
+	}
+	.logo{
+		width: 170px;
+	}
+	.menu-button-wrapper{
+		top: 8px;
+	}
+}
+@media screen and (max-width: 780px){
+	body{
+		&.on-scrolled{
+			&.customize-support{
+				header.main{
+					top: 46px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 980px){
+	.desktop-menu{
+		display: none;
+	}
+	.menu-button-wrapper{
+		display: block;
+	}
+}
+@media screen and (max-width: 680px){
+	.responsive-menu{
+		nav {
+			padding: 80px 20px 80px 20px;
+			div{
+				width: 100%;
+				a{
+					font-size: 68px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 480px){
+	.responsive-menu{
+		nav{
+			div{
+				a{
+					font-size: 45px;
+				}
+			}
+		}
+	}
+}
+// //////////////
+// Feature Stories
+// //////////////
+@media screen and (max-width: 1800px){
+	.feature-stories{
+		h2{
+			font-size: 50px;
+		}
+	}
+}
+@media screen and (max-width: 1400px){
+	.feature-stories{
+		.col-3{
+			padding: 3%;
+		}
+	}
+}
+@media screen and (max-width: 1050px){
+	.feature-stories{
+		width: 100%;
+		height: auto;
+		min-height: auto;
+		.col-3{
+			width: 100%;
+			padding: 50px;
+			height: auto;
+			min-height: auto;
+		}
+		h2{
+			font-size: 75px;
+		}
+		.table, .table-cell{
+			display: block;
+		}
+		.table-cell{
+			overflow: visible;
+		}
+	}
+	// //////////////
+	// Hero Video on Hom page
+	// //////////////
+	.video{
+		height: auto;
+		padding: 18% 0;
+		.video-wrapper{
+			position: absolute;
+		}
+	}
+	// //////////////
+	// News
+	// //////////////
+	.news{
+		.col-4{
+			@include reset-col-4(2%,2%);
+		}
+	}
+	// //////////////
+	// Sub footer
+	// //////////////
+	footer{
+		.col-3, .col-2{
+			width: 100%;
+			padding-right: 0;
+			margin-bottom: 30px;
+			text-align: center;
+			max-width: 300px;
+			clear: both;
+			margin-left: auto!important;
+			float: none;
+			margin-right: auto!important;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		h6{
+			position: static;
+			padding-bottom: 20px;
+		}
+	}
+}
+@media screen and (max-width: 450px){
+	.feature-stories{
+		h2{
+			font-size: 50px;
+		}
+		.col-3{
+			padding: 50px 20px;
+		}
+	}
+}
+@media screen and (max-width: 600px){
+	// //////////////
+	// News
+	// //////////////
+	.news{
+		.col-4{
+			@include reset-col-2(0, 2%);
+		}
+	}
+}
+@media screen and (max-width: 1020px){
+	// //////////////
+	// Bottom footer
+	// //////////////
+	.bottom-footer{
+		text-align: center;
+		ul{
+			float: none;
+			margin: auto;
+			display: inline-block;
+			width: auto;
+		}
+		.col-2{
+			width: 100%;
+			margin-bottom: 10px;
+			&:last-child{
+				margin-bottom: 0;
+				padding-bottom: 10px;
+			}
+		}
+	}
+	.copy{
+		float: none;
+	}
+	// //////////////
+	// Single page
+	// //////////////
+	figcaption, p.wp-caption-text{
+		width: 100%;
+		float: left;
+		text-align: center;
+		font-weight: bold;
+		margin-top: 8px;
+	}
+	.banner-content{
+		width: 100%;
+		bottom: 0;
+		padding-bottom: 0;
+		right: 0;
+	}
+	.banner{
+		.banner-wrapper{
+			background-position: top;
+			-webkit-background-size: contain;
+			     -o-background-size: contain;
+			        background-size: contain;
+		}
+	}
+}	
+@media screen and (max-width: 600px){
+	.banner{
+		height: 580px;
+	}
+}
+// //////////////
+// Contributors
+// //////////////
+@media screen and (max-width: 950px){
+	.inner-page{
+		.col-3{
+			@include reset-col-3(5%,5%);
+			@include col-2(5%,5%);
+		}
+	}
+}
+@media screen and (max-width: 600px){
+	.inner-page{
+		.col-3{
+			@include reset-col-2(5%,5%);
+		}
+		.col-2{
+			@include reset-col-2(5%,5%);
+		}
+	}
+}
+// //////////////
+// Contact page
+// //////////////
+@media screen and (max-width: 780px){
+	.one-twoThird{
+		@include reset-one-twoThird(5%);
+	}
 }

@@ -23,7 +23,11 @@ Section: banner
 			<a href="<?php echo get_the_permalink(); ?>" class="banner-content">
 				<h1><?php echo get_the_title(); ?></h1>
 
-				<div class="small-font"><?php echo get_the_date('U'); ?> hour ago</div>
+				<?php 
+						$currentTime = date('d-m-Y H:i:s');
+						$postTime = get_the_date('d-m-Y H:i:s');
+						 ?>
+					<div class="small-font"><?php echo ($currentTime - $postTime); ?> days ago</div>
 				<?php $textToTrim = get_the_content();
 						$textTrimmed = trimText($textToTrim, '', 155);
 				 ?>

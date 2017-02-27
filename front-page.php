@@ -17,9 +17,16 @@ Section: Feature Stories
 		<a href="<?php echo get_the_permalink(); ?>" class="col-3" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>');">
 			<div class="table">
 				<div class="table-cell">
-					<h2><?php echo get_the_title(); ?></h2>
-					<div class="small-font"><?php echo get_the_date('U'); ?> hour ago</div>
-					<?php $textToTrim = get_the_content();
+					<?php $titleToTrim = get_the_title();
+						$titleTrimmed = trimText($titleToTrim, '...', 39);
+					 ?>
+					<h2><?php echo $titleTrimmed; ?></h2>
+					<?php 
+						$currentTime = date('d-m-Y H:i:s');
+						$postTime = get_the_date('d-m-Y H:i:s');
+						 ?>
+					<div class="small-font"><?php echo ($currentTime - $postTime); ?> days ago</div>
+					<?php $textToTrim = get_the_excerpt();
 							$textTrimmed = trimText($textToTrim, '...', 430);
 					 		?>
 							<p><?php echo $textTrimmed; ?></p>

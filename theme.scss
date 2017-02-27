@@ -226,7 +226,7 @@ footer{
 		font-size: 13px;
 		line-height: 1.6;
 	}
-	.col-3{
+	.col-2{
 		padding-right: 60px;
 		padding-top: 40px;
 		position: relative;
@@ -330,7 +330,7 @@ footer{
 .feature-stories{
 	height: 91vh;
 	width: 100vw;
-	min-height: 700px;
+	min-height: 865px;
 	.col-3{
 		height: 100%;
 		padding: 5%;
@@ -739,6 +739,128 @@ body{
 .captcha{
 	display: none;
 }
+.page-not-found{
+	background-image: url('images/404.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: contain;
+	     -o-background-size: contain;
+	        background-size: contain;
+	height: 984px;
+}
+
+// //////////////
+// Responsive Menu
+// //////////////
+.responsive-menu{
+	position: relative;
+	float: right;
+	width: auto;
+	nav{
+		position: fixed;
+		display: none;
+		background-color: $theme;
+		color: black;
+		left: 0;
+		top: 0;
+		right: 0;
+		height: 100%;
+		bottom: 0;
+		z-index: 9;
+		padding: 80px 50px 80px 50px;
+		overflow-y: scroll;
+		div{
+			width: 70%;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 100px;
+			a{
+				color: black;
+				font-family: $theme-font;
+				font-size: 75px;
+				font-weight: bolder;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+			li{
+				width: 100%;
+				margin-bottom: 35px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+	&.show{
+		nav{
+			display: block;
+		}
+	}
+	ul{
+		list-style: none;
+	}
+}//responsive-menu
+.menu-button-wrapper{
+	display: none;
+	z-index: 99;
+	position: absolute;
+	top: 26px;
+	right: 0;
+    cursor: pointer;
+    float: right;
+    position: relative;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    @include transition(.3);
+    &.show{
+		.menu-button{
+			&:before {
+		    top: 12px;
+		    background-color: black;
+		    @include transform(-45);
+			}
+			&:after {
+			    top: 12px;
+			    border: 0;
+			    height: 3.4px;
+			    background: black;
+			    border-top-color: black;
+				border-bottom-color: black;
+			    @include transform(45);
+			}
+		}
+	}
+}
+.menu-button{
+    position: relative;
+    color: $theme;
+    width: 40px;
+    font-weight: 700;
+    text-align: right;
+    height: 30px;
+    @include transition(.2);
+    &:after, &:before {
+	    position: absolute;
+	    content: "";
+	    display: block;
+	    width: 100%;
+	    left: 0;
+	    @include transition(.3);
+	}
+	&:before {
+	    top: 26px;
+	    height: 3.4px;
+	    background-color: $theme;
+	}
+	&:after {
+	    top: 0;
+	    height: 10px;
+	    border-top: 3.5px solid $theme;
+	    border-bottom: 3.5px solid $theme;
+	}
+}
+
 // //////////////
 //This file link includes resonsive style and it MUST always stays at the bottom of this file. If you need to type code, please type above to this link. Don't type below of responsive file link.
 // //////////////

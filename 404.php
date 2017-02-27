@@ -2,9 +2,9 @@
 
 
 <section class="inner-page inner-page-2">
-	<div class="container">
-		<h3>404: Page not found</h3>
-		<p>Whoops. looks like the page you were looking for does not exit. Maybe try checking in Menu or <a href="<?php echo esc_url( home_url('')); ?>/contact/">contact us</a>.</p>
+	<div class="container page-not-found">
+		<!-- <h3>404: Page not found</h3>
+		<p>Whoops. looks like the page you were looking for does not exit. Maybe try checking in Menu or <a href="<?php echo esc_url( home_url('')); ?>/contact/">contact us</a>.</p> -->
 	</div>
 </section>
 

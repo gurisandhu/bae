@@ -41,6 +41,14 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'header-menu')); ?>
 				</nav>
 			</div>
+			<div class="responsive-menu">
+				<div class="menu-button-wrapper">
+					<div class="menu-button"></div>
+				</div>
+				<nav>
+					<?php wp_nav_menu( array( 'theme_location' => 'header-menu')); ?>
+				</nav>
+			</div>
 		</div>
 	</div>
 </header>

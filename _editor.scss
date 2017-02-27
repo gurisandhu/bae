@@ -208,6 +208,9 @@ header, section, footer, aside, nav{
 		display: block;
 		clear: both;
 	}
+	&:nth-child(-n+2){
+		margin-top: $margin2;
+	}
 }
 @mixin col-3($margin, $margin2){
 	float: left;
@@ -236,6 +239,15 @@ header, section, footer, aside, nav{
 		float: left;
 		clear: none;
 	}
+	&:nth-of-type(3n+4){
+		float: left;
+	}
+	&:nth-of-type(3n+3){
+		margin-right: $margin2;
+	}
+	&:nth-child(-n+3){
+		margin-top: $margin2;
+	}
 }
 
 @mixin col-4($margin, $margin2){
@@ -253,6 +265,29 @@ header, section, footer, aside, nav{
 		margin-right: 0;
 	}
 	&:nth-of-type(4n+5){
+		clear: left;
+	}
+}
+@mixin reset-col-4($margin, $margin2){
+	width: (100%-($margin))/2;
+	margin-right: $margin;
+	margin-top: $margin2;
+	&:nth-child(-n+4){
+		margin-top: $margin2;
+	}
+	&:nth-child(-n+2){
+		margin-top: 0;
+	}
+	&:nth-of-type(4n+4){
+		margin-right: $margin;
+	}
+	&:nth-of-type(2n+2){
+		margin-right: 0;
+	}
+	&:nth-of-type(4n+5){
+		float: left;
+	}
+	&:nth-of-type(2n+3){
 		clear: left;
 	}
 }
